@@ -7,7 +7,6 @@ while True:
     new = n//10 + last
     n = last*10 + new%10
     cnt += 1
-    print(n)
     if n == num:
         break
 
