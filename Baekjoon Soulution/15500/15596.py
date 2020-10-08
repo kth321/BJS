@@ -1,5 +1,5 @@
 def solve(a: list) -> int:
-    sum = 0
+    ans = 0
     for i in a:
-        sum += a
-    return sum
+        ans += i
+    return ans
