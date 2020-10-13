@@ -1,3 +1,5 @@
+import sys
+
 class stack(object):
     def __init__(self):
         self.items = []
@@ -23,10 +25,10 @@ class stack(object):
         except IndexError:
             return -1
 
-T = int(input())
+T = int(sys.stdin.readline())
 S = stack()
 for _ in range(T):
-    command = input().split()
+    command = sys.stdin.readline().split()
     if command[0] == 'push':
         S.push(command[1])
     elif command[0] == 'top':
