@@ -1,5 +1,10 @@
+def factorial(x):
+    if x == 1:
+        return 1
+    elif x== 0:
+        return 1
+    else:
+        return x * factorial(x-1)
+
 N = int(input())
-factorial = 1
-for i in range(N, 0, -1):
-    factorial *= i
-print(factorial)
+print(factorial(N))
