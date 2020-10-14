@@ -6,6 +6,6 @@ ans = 0
 coins.reverse()
 for coin in coins:
     if K // coin > 0:
-        coin_num, K = divmod(K, coin)
-        ans += coin_num
+        tmp, K = divmod(K, coin)
+        ans += tmp
 print(ans)
