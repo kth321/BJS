@@ -2,10 +2,14 @@ num = [0, 0]
 
 x = int(input())
 num = num + [None] * (x - 1)
+print(num)
 for i in range(2, x + 1):
     tmp = i
     cnt = 0
     while i != 1:
+        if num[i] is not None:
+            cnt += num[i]
+            break
         if i % 3 == 0:
             i = i // 3
         else:
@@ -15,7 +19,8 @@ for i in range(2, x + 1):
                 else:
                     i = i // 2
             else:
-                i -= 1 
+                i -= 1
         cnt += 1
     num[tmp] = cnt
-print(num[-1])
+    print('tmp: ', tmp, ', end num: ', i, f', num[{i}]: ', num[i], sep='')
+print(num)
