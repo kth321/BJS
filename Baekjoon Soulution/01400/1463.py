@@ -2,7 +2,6 @@ num = [0, 0]
 
 x = int(input())
 num = num + [None] * (x - 1)
-print(num)
 for i in range(2, x + 1):
     tmp = i
     cnt = 0
@@ -19,8 +18,8 @@ for i in range(2, x + 1):
                 else:
                     i = i // 2
             else:
-                i -= 1
+                i -= 1 
         cnt += 1
     num[tmp] = cnt
-    print('tmp: ', tmp, ', end num: ', i, f', num[{i}]: ', num[i], sep='')
-print(num)
+print(num[-1])
+
