@@ -5,3 +5,4 @@ for s in num:
 result.sort(reverse=True)
 for i in result:
     print(i, end='')
+print()
