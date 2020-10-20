@@ -1,21 +1,16 @@
 N, M = map(int, input().split())
-package = []
-piece = []
+package, piece = 1000, 1000
+sum = 0
 for _ in range(M):
     a, b = map(int, input().split())
-    package.append(a)
-    piece.append(b)
-
-package = min(package)
-piece = min(piece)
+    package = a if a < package else package
+    piece = b if b < piece else piece
 
 if 6 * piece < package:
-    print(N * piece)
+    sum = N * piece
 else:
     pack, N = divmod(N, 6)
     sum = pack * package
-    if N * piece > package:
-        sum += package
-    else:
-        sum += N * piece
-    print(sum)
+    x = package if N * piece > package else N * piece
+    sum += x
+print(sum)
