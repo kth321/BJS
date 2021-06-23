@@ -1,21 +1,18 @@
-computer = int(input())
-link = []
-for _ in range(int(input())):
-    a, b = map(int, input().split())
-    if link:
-        flag = False
-        for i in link:
-            if a in i or b in i:
-                i.add(a)
-                i.add(b)
-                flag = True
-        if not flag:
-            link.append({a, b})
-    else:
-        link.append({a, b})
+from collections import defaultdict
 
-for i in link:
-    if 1 in i:
-        print(len(i)-1)
-for i in link:
-    print(i)
+def dfs(result, start_v=1):
+	if start_v not in result:
+		result.append(start_v)
+		for vertex in table[start_v]:
+			dfs(result, vertex)
+	return result
+
+
+table = defaultdict(list)
+input()
+for _ in range(int(input())):
+	start_v, end_v = map(int, input().split())
+	table[start_v].append(end_v)
+	table[end_v].append(start_v)
+result = dfs([])
+print(len(result) - 1)
